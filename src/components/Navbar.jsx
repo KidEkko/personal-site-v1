@@ -108,6 +108,8 @@ function LoginButton({handleLogin}) {
         <button className="logButton" onClick={doLogin}>
           Login
         </button>
+        <p>This menu was made for testing, and will only display your name</p>
+        <p>Password just needs to be filled out</p>
       </div>
     </div>
   );

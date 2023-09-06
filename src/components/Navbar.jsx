@@ -95,9 +95,7 @@ function LoginButton({handleLogin}) {
       try {
         const url = "https://kidekko.dev/api/hello";
         const msg = fetch(url).then((resp) => {
-          console.log("fetching get");
           if (!resp.ok) {
-            console.log("fetching bad");
             throw new Error("Network response was not ok");
           }
           return resp.json();

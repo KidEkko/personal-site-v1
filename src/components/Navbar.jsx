@@ -94,11 +94,16 @@ function LoginButton({handleLogin}) {
     
       try {
         const url = "https://kidekko.dev/api/hello";
-        const msg = await SendGithubAPIRequest(url);
+        const msg = fetch(url).then((resp) => {
+          if (!resp.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return resp.json();
+        });
         console.log(msg);
 
       } catch {
-        setIsError(true);
+        console.log("whoops");
       }
   }
 

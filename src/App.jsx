@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from './pages';
-import KidEkko from './pages/me';
+import KidEkko from './pages/aboutme';
 import "./App.css";
 import "./Extra.css";
 

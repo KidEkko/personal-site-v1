@@ -35,13 +35,11 @@ function KidEkkoDisplay() {
     );
   }
 
-  // only render socials if they exist, also should probably be somewhere else on the page
-
   // Was introduced to Tailwind halfway through this, going to use it in my next site
   return (
     <>
       <div className="displaybod">
-        <div className="max">
+        <div className="max70">
           <div className="rowWrap">
             <div className="amwrap">
               <h2>Hi, I'm {kidEkko.name}</h2>
@@ -63,9 +61,7 @@ function KidEkkoDisplay() {
                   <p>I am Currently Looking for Work!</p>
                 )}
               </p>
-              <div className="rowWrap socials">
-                <Socials />
-              </div>
+              <Socials />
             </div>
             <div className="rowWrap">
               <div className="reactShow">

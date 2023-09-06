@@ -19,9 +19,7 @@ function Socials() {
       />
     ));
   };
-  return (
-    <div>{renderLinks()}</div>
-  )
+  return <div className="rowWrap socials">{renderLinks()}</div>;
 }
 
 export default Socials;

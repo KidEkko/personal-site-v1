@@ -86,11 +86,29 @@ function LoginButton({handleLogin}) {
     }
   }
 
+  async function testAPI(e) {
+    e.preventDefault();
+
+    // set some loading variable to be true
+    // while loading, button should change in some way (or a component itself, button should be disabled from triggering multiple calls)
+    
+      try {
+        const url = "https://kidekko.dev/api/hello";
+        const msg = await SendGithubAPIRequest(url);
+        console.log(msg);
+
+      } catch {
+        setIsError(true);
+      }
+  }
+
   return (
     <div>
       <button className="logButton" onClick={toggleLogin}>
         Log In
-          <span className={`arrow-icon ${loggingIn ? "down" : ""}`}>&#x25BC;</span>
+        <span className={`arrow-icon ${loggingIn ? "down" : ""}`}>
+          &#x25BC;
+        </span>
       </button>
       <div className={`login-menu ${loggingIn ? "open" : ""}`}>
         <h3>Username</h3>
@@ -107,6 +125,9 @@ function LoginButton({handleLogin}) {
         />
         <button className="logButton" onClick={doLogin}>
           Login
+        </button>
+        <button className="logButton" onClick={testAPI}>
+          Test
         </button>
         <p>This menu was made for testing, and will only display your name</p>
         <p>Password just needs to be filled out</p>

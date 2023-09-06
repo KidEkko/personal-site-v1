@@ -93,7 +93,7 @@ function LoginButton({handleLogin}) {
     // while loading, button should change in some way (or a component itself, button should be disabled from triggering multiple calls)
     
       try {
-        const url = "https://www.kidekko.dev/api/hello";
+        const url = "https://kidekko.dev/api/hello";
         const msg = fetch(url).then((resp) => {
           console.log("fetching get");
           if (!resp.ok) {

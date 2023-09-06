@@ -94,7 +94,14 @@ function LoginButton({handleLogin}) {
     
       try {
         const url = "https://kidekko.dev/api/hello";
-        const msg = fetch(url).then((resp) => {
+        const msg = fetch(url, {
+          method: "GET",
+          headers: {
+            "Access-Control-Allow-Origin": "https://kidekko.dev",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "GET, POST",
+          },
+        }).then((resp) => {
           if (!resp.ok) {
             throw new Error("Network response was not ok");
           }
